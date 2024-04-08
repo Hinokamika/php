@@ -104,60 +104,63 @@
                                 </div>
                                 <div class="outline">
                                     <div id="questionForm" class="create-question form active">
-                                        <header>Add Question</header>
-                                        <form >
-                                            <input type="text" placeholder="Start your question...." />
+                                        <form action="Menufile.php" method="POST">
+                                            <header>Add Question</header>
+                                            <input type="text" placeholder="Start your question...." name="question_text" />
+                                            <div class="icons-img">
+                                                <input type="file" accept="image/*" style="display: none;" id="questionImageInput" />
+                                                <label for="questionImageInput">
+                                                    <i class="fas fa-image"></i>
+                                                </label>
+                                                <img id="questionImagePreview" src="#" alt="Question Image" style="display: none; max-width: 100px; max-height: 100px;">
+                                                <button class="delete-btn" >Delete</button>
+                                            </div>
                                         </form>
-                                        <div class="icons-img">
-                                            <input type="file" accept="image/*" style="display: none;" id="questionImageInput" />
-                                            <label for="questionImageInput">
-                                                <i class="fas fa-image"></i>
-                                            </label>
-                                            <img id="questionImagePreview" src="#" alt="Question Image" style="display: none; max-width: 100px; max-height: 100px;">
-                                            <button class="delete-btn" >Delete</button>
-                                        </div>
-                                        <ul class="privacy">
-                                            <li>
-                                                <select name="party">
-                                                    <option value="Public">Public</option>
-                                                    <option value="Limited">Limited</option>
-                                                </select>
-                                            </li>
-                                            <li class="cancel-btn">
-                                                <button id="closeFormBtn">Cancel</button>
-                                            </li>
-                                            <li class="submit-btn">
-                                                <button type="submit">Add question</button>
-                                            </li>
-                                        </ul>
+                                            <ul class="privacy">
+                                                <li>
+                                                    <select name="party">
+                                                        <option value="Public">Public</option>
+                                                        <option value="Limited">Limited</option>
+                                                    </select>
+                                                </li>
+                                                <li class="cancel-btn">
+                                                    <button id="closeFormBtn">Cancel</button>
+                                                </li>
+                                                <li class="submit-btn">
+                                                    <button type="submit" name="submit-question">Add question</button>
+                                                </li>
+                                            </ul>
+                                        
                                     </div>
                                     <div id="postForm" class="create-post form">
-                                        <header>Create Post</header>
-                                        <form>
-                                            <input type="text" placeholder="Start a post" />
+                                        <form action="Menufile.php" method="POST">
+                                            <header>Create Post</header>
+                                            <input type="text" placeholder="Start a post" name="caption" />
+                                        
+                                            <div class="icons-img">
+                                                <input type="file" accept="image/*" style="display: none;" id="postImageInput" name="image" />
+                                                <label for="postImageInput">
+                                                    <i class="fas fa-image"></i>
+                                                </label>
+                                                <img id="postImagePreview" src="#" alt="Post Image" style="display: none; max-width: 100px; max-height: 100px;">
+                                                <button class="delete-btn">Delete</button>
+                                            </div>
                                         </form>
-                                        <div class="icons-img">
-                                            <input type="file" accept="image/*" style="display: none;" id="postImageInput" />
-                                            <label for="postImageInput">
-                                                <i class="fas fa-image"></i>
-                                            </label>
-                                            <img id="postImagePreview" src="#" alt="Post Image" style="display: none; max-width: 100px; max-height: 100px;">
-                                            <button class="delete-btn" >Delete</button>
-                                        </div>
-                                        <ul class="privacy">
-                                            <li>
-                                                <select name="party">
-                                                    <option value="Public">Public</option>
-                                                    <option value="Limited">Limited</option>
-                                                </select>
-                                            </li>
-                                            <li class="cancel-btn" onclick="cancel()">
-                                                <button id="closeFormBtn">Cancel</button>
-                                            </li>
-                                            <li class="submit-btn">
-                                                <button type="submit">Add post</button>
-                                            </li>
-                                        </ul>
+                                            <ul class="privacy">
+                                                <li>
+                                                    <select name="party">
+                                                        <option value="Public">Public</option>
+                                                        <option value="Limited">Limited</option>
+                                                    </select>
+                                                </li>
+                                                <li class="cancel-btn" onclick="cancel()">
+                                                    <button id="closeFormBtn">Cancel</button>
+                                                </li>
+                                                <li class="submit-btn">
+                                                    <button type="submit" name="submit-post">Add post</button>
+                                                </li>
+                                            </ul>
+                                        
                                     </div>
                                 </div>
                             </div>
