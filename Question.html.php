@@ -127,29 +127,18 @@
                                 <div class="text-btn">Pass</div>
                             </button>
                         </li>
-                        <li class="option-an">
-                            <input type="checkbox" id="dropbow-dots" class="dp-dropbox" />
-                            <label for="dropbow-dots">
-                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M448 256c0-4.4-3.6-8-8-8H72c-4.4 0-8 3.6-8 8s3.6 8 8 8h368c4.4 0 8-3.6 8-8zm-128 64c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8s3.6 8 8 8h128c4.4 0 8-3.6 8-8zm-128-128c0-4.4-3.6-8-8-8H56c-4.4 0-8 3.6-8 8s3.6 8 8 8h128c4.4 0 8-3.6 8-8z"/>
-                                </svg>
-                            </label>
-                            <ul class="tasks">
-                                <li class="btn-size">
-                                    <button class="accordion first1">Save</button>
-                                </li>
-                                <div class="line1"></div>
-                                <li class="btn-size">
-                                    <button class="accordion last1">Delete</button>
-                                </li>
-                            </ul>
+                        <li class="Edit-btn">
+                            <button class="Btn">
+                                <div class="sign">
+                                <svg class="feather feather-edit" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </div>
+                                <div class="text-btn">Edit</div>
+                            </button>
                         </li>
                     </ul>
                 </div>
             </div>
-            <?php
-            include '../Menu/Menufile.php';
-            $questions = []; // Initialize the $questions variable as an empty array
+            <?php include './View_question.php';
             foreach ($questions as $question){
             ?>
             <div class="answer-display">
@@ -167,13 +156,14 @@
                         </li>
                     </ul>
                     <div class="num-answer">
-                        <span><?= $question['number_of_answers']?></span>
+                        <span><?= $question['number_of_answers']?> likes</span>
                     </div>
                     <ul class="function-icons">
                         <li class="answer-btn">
                             <button class="Btn">
                                 <div class="sign">
                                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31.34 24.53A4.32 4.32 0 0 1 27 28.68h-1.24L20.45 34v-5.32H13a4.32 4.32 0 0 1-4.32-4.15ZM27 6H13a4.32 4.32 0 0 0-4.3 3.74h22.6A4.32 4.32 0 0 0 27 6ZM8.66 11.57v4.65h22.68v-4.65Zm0 11.13h22.68v-4.65H8.66Z" fill="#ffffff" class="fill-000000"></path>
                                     </svg>
                                 </div>
                                 <div class="text-btn">Answer</div>
@@ -183,7 +173,8 @@
                             <button class="Btn">
                                 <div class="sign">
                                     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M348.45 432.7H261.8a141.5 141.5 0 0 1-49.52-8.9l-67.5-25.07a15 15 0 0 1 10.45-28.12l67.49 25.07a111.79 111.79 0 0 0 39.08 7h86.65a14.21 14.21 0 1 0 0-28.42 15 15 0 0 1 0-30h20.45a14.21 14.21 0 1 0 0-28.42 15 15 0 0 1 0-30h20.44a14.21 14.21 0 0 0 10.05-24.26 14.08 14.08 0 0 0-10.05-4.16 15 15 0 0 1 0-30h20.45a14.21 14.21 0 0 0 10-24.26 14.09 14.09 0 0 0-10-4.17H268.15A15 15 0 0 1 255 176.74a100.2 100.2 0 0 0 9.2-29.33c3.39-21.87-.79-41.64-12.42-58.76a12.28 12.28 0 0 0-22.33 7c.49 51.38-23.25 88.72-68.65 108a15 15 0 1 1-11.72-27.61c18.72-8 32.36-19.75 40.55-35.08 6.68-12.51 10-27.65 9.83-45C199.31 77 211 61 229.18 55.34s36.81.78 47.45 16.46c24.71 36.36 20.25 74.1 13.48 97.21h119.68a44.21 44.21 0 0 1 19.59 83.84 44.27 44.27 0 0 1-20.44 58.42 44.27 44.27 0 0 1-19.58 1.44z"></path>
+                                        <path d="M348.45 432.7H261.8a141.5 141.5 0 0 1-49.52-8.9l-67.5-25.07a15 15 0 0 1 10.45-28.12l67.49 25.07a111.79 111.79 0 0 0 39.08 7h86.65a14.21 14.21 0 1 0 0-28.42 15 15 0 0 1 0-30h20.45a14.21 14.21 0 1 0 0-28.42 15 15 0 0 1 0-30h20.44a14.21 14.21 0 0 0 10.05-24.26 14.08 14.08 0 0 0-10.05-4.16 15 15 0 0 1 0-30h20.45a14.21 14.21 0 0 0 10-24.26 14.09 14.09 0 0 0-10-4.17H268.15A15 15 0 0 1 255 176.74a100.2 100.2 0 0 0 9.2-29.33c3.39-21.87-.79-41.64-12.42-58.76a12.28 12.28 0 0 0-22.33 7c.49 51.38-23.25 88.72-68.65 108a15 15 0 1 1-11.72-27.61c18.72-8 32.36-19.75 40.55-35.08 6.68-12.51 10-27.65 9.83-45C199.31 77 211 61 229.18 55.34s36.81.78 47.45 16.46c24.71 36.36 20.25 74.1 13.48 97.21h119.68a44.21 44.21 0 0 1 19.59 83.84 44.27 44.27 0 0 1-20.44 58.42 44.27 44.27 0 0 1-20.45 58.43 44.23 44.23 0 0 1-40 63Z" fill="#ffffff" class="fill-000000"></path>
+                                        <path d="M155 410.49H69.13a15 15 0 0 1-15-15V189.86a15 15 0 0 1 15-15H155a15 15 0 0 1 15 15v205.63a15 15 0 0 1-15 15Zm-70.84-30H140V204.86H84.13Z" fill="#ffffff" class="fill-000000"></path>
                                     </svg>
                                 </div>
                                 <div class="text-btn">Like</div>
@@ -200,22 +191,13 @@
                                 <div class="text-btn">Pass</div>
                             </button>
                         </li>
-                        <li class="option-an">
-                            <input type="checkbox" id="dropbow-dots" class="dp-dropbox" />
-                            <label for="dropbow-dots">
-                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M448 256c0-4.4-3.6-8-8-8H72c-4.4 0-8 3.6-8 8s3.6 8 8 8h368c4.4 0 8-3.6 8-8zm-128 64c0-4.4-3.6-8-8-8H184c-4.4 0-8 3.6-8 8s3.6 8 8 8h128c4.4 0 8-3.6 8-8zm-128-128c0-4.4-3.6-8-8-8H56c-4.4 0-8 3.6-8 8s3.6 8 8 8h128c4.4 0 8-3.6 8-8z"/>
-                                </svg>
-                            </label>
-                            <ul class="tasks">
-                                <li class="btn-size">
-                                    <button class="accordion first1">Edit</button>
-                                </li>
-                                <div class="line1"></div>
-                                <li class="btn-size">
-                                    <button class="accordion last1">Delete</button>
-                                </li>
-                            </ul>
+                        <li class="Edit-btn">
+                            <button class="Btn">
+                                <div class="sign">
+                                <svg class="feather feather-edit" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </div>
+                                <div class="text-btn">Edit</div>
+                            </button>
                         </li>
                     </ul>
                 </div>
