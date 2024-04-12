@@ -95,7 +95,7 @@
                         <span>20 answers</span>
                     </div>
                     <ul class="function-icons">
-                        <li class="answer-btn">
+                        <li class="answer-btn" id="pop_open">
                             <button class="Btn">
                                 <div class="sign">
                                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +127,7 @@
                                 <div class="text-btn">Pass</div>
                             </button>
                         </li>
-                        <li class="Edit-btn">
+                        <li class="Edit-btn" id="pop_appear">
                             <button class="Btn">
                                 <div class="sign">
                                 <svg class="feather feather-edit" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
@@ -136,6 +136,61 @@
                             </button>
                         </li>
                     </ul>
+                    <div class="reply-form" id="anspopup" style="display: none;" >
+                        <div class="header-title">
+                            <h2>Question:</h2>
+                        </div>
+                        <div class="question-previous">
+                            <span>What is your name</span>
+                        </div>
+                        <div class="comment-title">
+                            <h3>Answer:</h3>
+                        </div>
+                        <ul class="list_answer">
+                            <li class="answer-text">
+                                <span> My answer is .........</span>
+                            </li>
+                            <li class="fnc-btn">
+                                <label class='container1'>
+                                    <input type='checkbox'>
+                                    <div class='checkmark'>
+                                        <svg viewBox="0 0 256 256">
+                                        <rect fill="none" height="256" width="256"></rect>
+                                        <path d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z" stroke-width="20px" stroke="#FFF" fill="none"></path></svg>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="reply-question">
+                            <form action="Insert_question.php" method="POST">
+                                <textarea name="answer_text" id="answer" cols="78" rows="3"></textarea>
+                                <br>
+                                <ul class="button_sign">
+                                    <li class="cn-btn">
+                                        <button type="button" id="closeFormBtn">Cancel</button>
+                                    </li>
+                                    <li class="rl-btn">    
+                                        <button type="submit" name="reply_question" class="reply-btn">Reply</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="update_form" id="up_pop" style="display: none;" >
+                        <div class="form_header">
+                            <h3>Update:</h3>
+                        </div>
+                        <div class="update_input">
+                            <textarea name="answer_text" id="answer" cols="78" rows="3"></textarea>
+                        </div>
+                        <ul class="update_button">
+                            <li>
+                                <button type="button" class="cn_btn" id="close_popupbtn">Cancel</button>
+                            </li>
+                            <li>
+                                <button type="submit" class="update_btn" name="edit">Update</button>
+                            </li>
+                        </ul>
                 </div>
             </div>
             <?php include './View_question.php';
@@ -159,7 +214,7 @@
                         <span><?= $question['number_of_answers']?> likes</span>
                     </div>
                     <ul class="function-icons">
-                        <li class="answer-btn">
+                        <li class="answer-btn" id="pop_open">
                             <button class="Btn">
                                 <div class="sign">
                                     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +236,7 @@
                             </button>
                         </li>
                         <li class="Pass-btn">
-                            <form action="Deletequestions.php" method="POST">
+                            <form action="Delete_quetions.php" method="POST">
                                 <input type="hidden" name="id" value="<?=$question['id']?>">
                                 <button type="submit" class="Btn">
                                     <div class="sign">
@@ -194,22 +249,84 @@
                                 </button>
                             </form>
                         </li>
-                        <li class="Edit-btn">
-                            <button class="Btn">
-                                <div class="sign">
-                                <svg class="feather feather-edit" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                                </div>
-                                <div class="text-btn">Edit</div>
-                            </button>
+                        <li class="Edit-btn" id="pop_appear">
+                            <form action="Edit_questions.php" method="POST">
+                                <input type="hidden" name="id" value="<?=$question['id']?>">
+                                <button type="submit" class="Btn">
+                                    <div class="sign">
+                                    <svg class="feather feather-edit" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                    </div>
+                                    <div class="text-btn">Edit</div>
+                                </button>
+                            </form>
                         </li>
                     </ul>
+                    <div class="reply-form" id="anspopup" style="display: none;" >
+                        <div class="header-title">
+                            <h2>Question:</h2>
+                        </div>
+                        <div class="question-previous">
+                            <span><?= $question['question_text']?></span>
+                        </div>
+                        <div class="comment-title">
+                            <h3>Answer:</h3>
+                        </div>
+                        <ul class="list_answer">
+                            <li class="answer-text">
+                                <span> My answer is .........</span>
+                            </li>
+                            <li class="fnc-btn">
+                                <label class='container1'>
+                                    <input type='checkbox'>
+                                    <div class='checkmark'>
+                                        <svg viewBox="0 0 256 256">
+                                        <rect fill="none" height="256" width="256"></rect>
+                                        <path d="M224.6,51.9a59.5,59.5,0,0,0-43-19.9,60.5,60.5,0,0,0-44,17.6L128,59.1l-7.5-7.4C97.2,28.3,59.2,26.3,35.9,47.4a59.9,59.9,0,0,0-2.3,87l83.1,83.1a15.9,15.9,0,0,0,22.6,0l81-81C243.7,113.2,245.6,75.2,224.6,51.9Z" stroke-width="20px" stroke="#FFF" fill="none"></path></svg>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="reply-question">
+                            <form action="Insert_question.php" method="POST">
+                                <textarea name="answer_text" id="answer" cols="78" rows="3"></textarea>
+                                <br>
+                                <ul class="button_sign">
+                                    <li class="cn-btn">
+                                        <button type="button" id="closeFormBtn">Cancel</button>
+                                    </li>
+                                    <li class="rl-btn">    
+                                        <button type="submit" name="reply_question" class="reply-btn">Reply</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="update_form" id="up_pop" style="display: none;" >
+                            <div class="form_header">
+                                <h3>Update:</h3>
+                            </div>
+                            <form action="Edit_questions.php" method="POST">
+                                <div class="update_input">
+                                    <textarea name="answer_text" id="answer" cols="78" rows="3" value="<?= $question['question_text'] ?>"></textarea>
+                                </div>
+                                <ul class="update_button">
+                                    <li>
+                                        <button type="button" class="cn_btn" id="close_popupbtn">Cancel</button>
+                                    </li>
+                                    <li>
+                                        <input type="hidden" name="id" value="<?= $question['id'] ?>">
+                                        <button type="submit" class="update_btn" name="edit">Update</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php
             }
             ?>
         </div>
-        
     </div>
+    <script src="Question.js"></script>
 </body>
 </html>
