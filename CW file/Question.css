@@ -1,0 +1,576 @@
+body{
+    background-color: rgb(16,16,16);
+    height: 100%;
+    width: 100%;
+}
+
+.body{
+    overflow: auto;
+}
+
+.header{
+    height: 80px;
+    width: 100%;
+    position: sticky;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px
+}
+
+.logo svg{
+    height: 33pt;
+    width: 100pt;
+    margin-top: 9px;
+    margin-left: 100px;
+    color: white;
+}
+
+.mid_icon svg{
+    height: 20pt;
+    padding-left: 70px;
+}
+
+
+.last_icon svg{
+    height: 23pt;
+    width: 23pt;
+    padding: 20px;
+    margin-top: -20px;
+    list-style: none;
+    color: white;
+}
+
+.mid{
+    display: flex;
+    list-style: none;
+    margin-right: 0px;
+    flex-shrink: 0; 
+    padding-left: 0px;
+}
+
+.last{
+    display: flex;
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+input[type=text]{
+    position: relative;
+    padding: 10px 40px 10px 20px;
+    width: 0.9px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(16,16,16) 0%,#ffffff rgb(16,16,16) 100%);
+    transition: width 0.4s ease;
+    outline: none;
+    background-color: rgb(16,16,16);
+    margin-top: -3px;
+    
+    &:focus{ width: 200px; }
+}
+
+i{
+    position: relative;
+    left: -10px;
+    color: #ffffff;
+}
+
+.icon{
+    height: 15pt;
+    margin-top: 0px;
+}
+
+.button {
+    background-color: rgb(16,16,16);
+    border: none;
+    margin: 0px 0px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.button:hover {
+    opacity: 0.6;
+}
+
+.search svg{
+    width: 25px;
+    margin-top: 2px;
+}
+
+.listingHeader .dropdown {
+    z-index:10;
+    position:relative;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.cb-dropbox {
+    display: none; 
+}
+
+.cb-dropbox:checked ~ .dd-c {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+}
+
+.dd-c{
+    right: 0;
+    left: auto;
+    position: absolute;
+    height:auto;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition-duration: 0.3s;
+    width:160px;
+    margin-right: 70px;
+    margin-top: -px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.dd-c a{
+    color: black;
+    font-size:12px;
+    text-decoration:none;
+}
+
+.dd-c ul {
+    padding:inherit;
+    list-style-type: none;
+    padding-inline-start: 40px;
+}
+
+.dd-c ul ul {
+    font-size:calc(100% - 1px);
+    padding:inherit;
+    padding-left: 15px;
+    list-style-type: none;
+}
+
+.accordion {
+    background-color: #181818;
+    color: rgb(255, 255, 255);
+    padding: 14px;
+    width: 160px;
+    display: flexbox;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.first1{
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+}
+
+.last1{
+    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+}
+
+.line{
+    border-bottom: 1px solid #393939;
+}
+
+.accordion:hover {
+    background-color: rgb(112, 112, 112);
+}
+
+.accordion:after {
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(16, 16, 16);
+}
+
+  /* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign svg {
+    width: 20px;
+
+}
+
+.sign svg path {
+    fill: white;
+}
+  /* text */
+.text-btn {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+    margin-left: 5px;
+}
+  /* hover effect on button width */
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+  /* hover effect button's text */
+.Btn:hover .text-btn {
+    opacity: 1;
+    width: 50%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+    transform: translate(4px ,4px);
+}
+
+.answer-display{
+    width: 600px;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.answer-form{
+    width: 590px;
+    height: 109px;
+    border-bottom: 1px solid white;
+    background-color: rgb(16,16,16);
+}
+
+.title-cross{
+    list-style: none;
+    display: flex;
+    color: white;
+    padding-left: 18px;
+}
+
+.question-title{
+    margin-right: 30px
+}
+
+.question-title span{
+    font-weight: bold;
+}
+
+.Xmark-icon button{
+    font-size: 20px;
+    background-color: rgb(16, 16, 16);
+    border: none;
+    color: white;
+}
+
+.num-answer{
+    margin-top: -10px;
+}
+
+.num-answer span{
+    color:#777;
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.function-icons{
+    list-style: none;
+    display: flex;
+    margin-top:3px;
+    margin-left: -25px;
+}
+
+.btn:hover{
+    opacity: 0.6;
+}
+
+.btn{
+    background-color: rgb(16,16,16);
+    border: none;
+}
+
+.btn:hover{
+    border-radius: 30%;
+    background-color: #232323;
+}
+
+.reply-form{
+    width: 589px;
+    height: 450px;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 999;
+    right: 33.55%;
+    top: 20%;
+    backdrop-filter: blur(2.653010606765747px);
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.header-title h2{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.question-previous{
+    width: 550px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid white;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.question-previous span{
+    color: white;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.reply-question{
+    margin-top: 120px;
+}
+
+textarea{
+    background-color: rgb(16,16,16);
+    border: none;
+    color: white;
+    margin-left: 19px;
+}
+
+textarea:focus{
+    outline-color: white;
+    color: white;
+}
+
+.reply-question button{
+    background-color: rgb(16,16,16);
+    border: none;
+    color: white;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.reply-question button:hover{
+    background-color: #232323;
+    color: white;
+}
+
+.reply-question button:active{
+    transform: translate(2px ,2px);
+}
+
+.button_sign{
+    list-style: none;
+    display: flex;
+    margin-left: 400px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.button_sign button{
+    background-color: rgb(16,16,16);
+    border: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.comment-title h3{
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.list_answer{
+    width: 527px;
+    height: 40px;
+    max-height: auto;
+    list-style: none;
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-left: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+.answer-text{
+    color: white;
+    font-size: 16px;
+}
+
+.icons{
+    width: 22px;
+    height: 20px;
+    padding: 5px;
+}
+
+.icons svg{
+    color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.heart-icon{
+    height: 25px;
+    width: 25px;
+}
+
+.container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.container1 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    transition: 100ms;
+    margin-right: 15px;
+}
+
+.checkmark {
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    transition: 100ms;
+    animation: dislike_effect 400ms ease;
+}
+
+.container1 input:checked ~ .checkmark path {
+    fill: #FF5353;
+    stroke-width: 0;
+}
+
+.container1 input:checked ~ .checkmark {
+    animation: like_effect 400ms ease;
+}
+
+
+@keyframes like_effect {
+    0% {
+    transform: scale(0);
+    }
+
+    50% {
+    transform: scale(1.2);
+    }
+
+    100% {
+    transform: scale(1);
+    }
+}
+
+@keyframes dislike_effect {
+    0% {
+    transform: scale(0);
+    }
+
+    50% {
+    transform: scale(1.2);
+    }
+
+    100% {
+    transform: scale(1);
+    }
+}
+
+.update_form{
+    width: 590px;
+    height: 160px;
+    border: 1px solid white;
+    background-color: rgb(16,16,16);
+    border-radius: 10px;
+    position: fixed;
+    z-index: 999;
+    right: 33.55%;
+    top: 20%;
+    backdrop-filter: blur(2.653010606765747px);
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.form_header h3{
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.update_button{
+    list-style: none;
+    display: flex;
+    margin-top: 0px;
+    margin-left: 390px;
+}
+
+.update_button button{
+    background-color: rgb(16,16,16);
+    border: none;
+    color: white;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 7px 15px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    margin-right: 5px;
+}
+
+.update_button button:hover{
+    background-color: #232323;
+    color: white;
+}
